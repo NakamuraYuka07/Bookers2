@@ -1,0 +1,11 @@
+Rails.application.routes.draw do
+  root 'homes#top'
+  devise_for :users
+  
+  resources :homes, only: [:new, :index,]
+  resources :books, only: [:new, :create, :index, :show, :destroy, :edit, :update]
+  resources :users, only: [:show, :edit, :update, :index]
+  
+  
+end
+
